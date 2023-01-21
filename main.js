@@ -12,9 +12,15 @@ function playRound() {
 
 function playerChoice() {
     //get input from the player
+    let input = prompt('Type Rock, Paper, or Scissors');
+    while (input == null) {
+        input = prompt('Type Rock, Paper or Scissors')
+    }
+    input = input.toLowerCase();
+    console.log(input);
 }
 
 function computerChoice() {
     //get random input from the comp
-    return choices(Math.floor())
+    return choices[Math.floor(Math.random()*choices.length)]
 }
