@@ -16,4 +16,5 @@ function playerChoice() {
 
 function computerChoice() {
     //get random input from the comp
+    return choices(Math.floor())
 }
