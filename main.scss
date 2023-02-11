@@ -1,0 +1,22 @@
+function playerChoice() {
+    let input = prompt("Type Rock, Paper, or Scissors");
+    if (input == null) {
+      return null;
+    }
+    input = input.toLowerCase();
+    let check = validateInput(input);
+    console.log(input);
+    return input;
+  }
+  
+  function playRound(round) {
+    const playerSelection = playerChoice();
+    if (playerSelection === null) {
+      return;
+    }
+    const computerSelection = computerChoice();
+    const winner = checkWinner(playerSelection, computerSelection);
+    winners.push(winner);
+    logRound(playerSelection, computerSelection, winner, round);
+  }
+  
