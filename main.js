@@ -2,7 +2,7 @@
 //play five rounds
 //console based
 
-const choices = ["rock", "paper", "scissors"];
+let choices = ["rock", "paper", "scissors"];
 let winners = [];
 
 function game() {
@@ -21,33 +21,17 @@ function playRound(round) {
   logRound(playerSelection, computerSelection, winner, round);
 }
 
-//get input from the player
-
 function playerChoice() {
   let input = prompt("Type Rock, Paper, or Scissors");
   while (input == null) {
     input = prompt("Type Rock, Paper or Scissors");
   }
-}
-
-// this allows no input to show up if mispelled
-// a word, or wrote anything in the input prompt
-
-input = input.toLowerCase();
-let check = validateInput(input);
-if (check == true) {
+  input = input.toLowerCase();
+  let check = validateInput(input);
   console.log(input);
-  while (check == false) {
-    input = prompt(
-      "Type Rock, Paper, or Scissors. Spelling needs to be exact, but captilization doesn't matter"
-    );
-    while (input == null) {
-      input = input.toLowerCase();
-      check = validateInput(input);
-    }
-    return input;
-  }
+  return input;
 }
+
 //get random input from the comp
 
 function computerChoice() {
@@ -93,3 +77,5 @@ function logRound(playerChoice, computerChoice, winner, round) {
   console.log(winner, "Won the Round!");
   console.log("--------------------------");
 }
+
+game();
